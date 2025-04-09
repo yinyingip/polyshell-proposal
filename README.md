@@ -1,5 +1,7 @@
 # Proposal for the Polyshell Challenge
-Proposal for the Polyshell Challenge
+
+## Motivation
+I would like to contribute to the Earth observation community by working on a meaningful project that not only supports the field but also allows me to enhance my skills and build a strong portfolio for my career.
 
 ## Proposed Solution: Objectives & Goals
 In my proposed solution, I will utilize a combination of well-established geometry manipulation techniques to effectively process and analyze spatial data. These techniques include:
