@@ -76,3 +76,7 @@ An alternative approach to approximating the polygon boundary with fewer vertice
 ![tab1](https://github.com/yinyingip/polyshell-proposal/blob/main/tab1.png)
 
 <sub>Tab. 1. Performance in terms of effectiveness in reducing vertices and processing time.</sub>
+
+## Polygon Simplication Algorithm Flowchart
+![flowchart](https://github.com/yinyingip/polyshell-proposal/blob/main/polygon_simplication_algorithm_flowchart.png)
+
