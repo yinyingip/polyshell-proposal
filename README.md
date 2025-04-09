@@ -38,6 +38,7 @@ Although the goal is to preserve significant concavities, the **Convex Hull** se
 Applying a **buffer** (yellow area in Fig. 1) is particularly useful when simplifying a **single closed linestring** (i.e., the exterior boundary of a polygon). The buffer **expands the boundary outward**, ensuring that the entire area of the original polygon is retained. For highly detailed polygons, such as country boundaries from OpenStreetMap, adding a buffer alone can significantly reduce the number of vertices (see Table 1).
 
 ![fig1](https://github.com/yinyingip/polyshell-proposal/blob/main/fig1.png)
+
 <sub>Fig. 1. Example of Polygon Simplification Algorithm using the country boundary of Germany from OpenStreetMap. Grey: The original Polygon; Yellow: adding Buffer; Blue: Difference between Convex Hull and the Grey area; Orange: Area to be appended to the original polygon; Red Dots: Convex Hull vertices</sub>
 
 ### **3A - Identifying Concavities Using Polygon Difference**
@@ -56,9 +57,22 @@ The area of these small polygons, or their proportion relative to the original p
 
 Before processing the **target_line**, the polygon and its two boundary components (**target_line** and **ref_line**) are rotated so that **ref_line aligns with the x-axis** (Fig. 2a). The **local minima** along the target_line provide an approximation of its shape but with fewer vertices, resulting in a simplified yet representative boundary (Fig. 2a).
 
+![fig2a](https://github.com/yinyingip/polyshell-proposal/blob/main/fig2a.png)
+![fig2b](https://github.com/yinyingip/polyshell-proposal/blob/main/fig2b.png)
+
+<sub>Fig. 2. Polygon Rotation and Local Minimas. Red: target_line, formed by vertices from the original polygon; Green: ref_line/ points, formed by vertices from the convex hull; Black cross in (a): origin for rotation;  Blue: Computed local minimas; Grey: Buffer boundary formed around the linestring connected by local minimas (a slight transform along the y-axis was done here)</sub>
+
 ### **3B/4B - Polygon-Raster Transformation**
 
 An alternative approach to approximating the polygon boundary with fewer vertices is through **polygon-to-raster transformation**. This involves:
 
 1. **Converting the polygon** (ideally with an added buffer from Step 2) into a **low-resolution raster** (e.g., 100 × 100 pixels).
 2. **Re-polygonizing** the rasterized polygon, generating a simplified shape based on pixelized boundaries (Fig. 3).
+
+![fig3](https://github.com/yinyingip/polyshell-proposal/blob/main/fig3.png)
+
+<sub>Fig. 3. Polygon - Raster Transformation. Orange: Original Polygon. Grey: Computed simplified Polygon</sub>
+
+![tab1](https://github.com/yinyingip/polyshell-proposal/blob/main/tab1.png)
+
+<sub>Tab. 1. Performance in terms of effectiveness in reducing vertices and processing time.</sub>
