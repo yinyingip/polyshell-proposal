@@ -37,7 +37,8 @@ Although the goal is to preserve significant concavities, the **Convex Hull** se
 
 Applying a **buffer** (yellow area in Fig. 1) is particularly useful when simplifying a **single closed linestring** (i.e., the exterior boundary of a polygon). The buffer **expands the boundary outward**, ensuring that the entire area of the original polygon is retained. For highly detailed polygons, such as country boundaries from OpenStreetMap, adding a buffer alone can significantly reduce the number of vertices (see Table 1).
 
-![Fig. 1. Example of Polygon Simplification Algorithm using the country boundary of Germany from OpenStreetMap. Grey: The original Polygon; Yellow: adding Buffer; Blue: Difference between Convex Hull and the Grey area; Orange: Area to be appended to the original polygon; Red Dots: Convex Hull vertices](https://github.com/yinyingip/polyshell-proposal/blob/main/fig1.png)
+![fig1](https://github.com/yinyingip/polyshell-proposal/blob/main/fig1.png)
+<sub>Fig. 1. Example of Polygon Simplification Algorithm using the country boundary of Germany from OpenStreetMap. Grey: The original Polygon; Yellow: adding Buffer; Blue: Difference between Convex Hull and the Grey area; Orange: Area to be appended to the original polygon; Red Dots: Convex Hull vertices</sub>
 
 ### **3A - Identifying Concavities Using Polygon Difference**
 
